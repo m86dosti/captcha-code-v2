@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>captcha code</title>
+    <style>
+        body{
+            background-color: black;
+            margin: 10px;
+            padding: 2px;
+        }
+        button{
+            max-width: 120px;
+            min-width: 100px;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            border: solid;
+            border-color: black;
+        }
+        button:hover{
+            background-color: rgb(15, 15, 15);
+            color: gray;
+            border-radius: 8px;
+            border-color: rgb(15, 15, 15);
+        }
+        button:active{
+            background-color:gray;
+            color: rgb(0, 0, 0);
+            border-radius: 8px;
+            border-color: rgb(0, 0, 0);
+        }
+        #container{
+            overflow: auto;    
+            max-width: 400px;
+            min-width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: gray;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 10px;
+        }
+        #output{
+            font-family: arial;
+            margin: 10px;
+            padding: 10px;
+            text-align: center;
+            height: 20px;
+            width: 100px;
+            border-style: solid;
+            border-radius: 5px;
+        }
+        #display{
+            color: black;
+            overflow: auto;    
+            max-width: 400px;
+            min-width: 200px;
+            background-color: gray;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+        input{
+            width: 100px;
+            margin-left: 20px;
+            border-radius: 5px;
+            border: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+    <button onclick="captcha()"> captcha code </button>
+    <div id="output"></div>
+    </div><div id="container">      
+    <button onclick="inputnum()"> send </button>
+    <input type="number" id="inpnum">
+    </div>
+    <p id="display"></p>
+
+    <script>
+        function captcha(){
+            var output = document.getElementById("output");
+            var num = Math.random()*100000;
+            var number = Math.floor(num);
+            output.innerHTML = "code : " + number ;}
+        function inputnum(){
+            var inpnum = parseInt(document.getElementById("inpnum").value);  
+            var display = document.getElementById("display");  
+            if (captcha.number = inpnum)
+                {display.innerHTML="hi user";}
+            else
+                {display.innerHTML="error";}}
+    </script>
+
+</body>
+</html>
